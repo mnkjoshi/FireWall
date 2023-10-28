@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+}
+body 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 100vh;
+    background: #1f2028;
+}
+h2 
+{
+    position: absolute;
+    bottom: 60vh;
+    transform: translateY(50%);
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 10em;
+    font-weight: 800;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+:root 
+{
+	--clr: #2c363f;
+}
+header
+{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background: #01233e;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 100px;
+	z-index: 1000;
+}
+.logo 
+{
+	position: relative;
+	color: #fff;
+	font-size: 2em;
+	font-weight: 600;
+	text-decoration: none;
+}
+header nav
+{
+	display: flex;
+	gap: 10px;
+}
+
+header nav a 
+{
+	position: relative;
+	text-decoration: none;
+	padding: 12px 20px;
+	color: #fff;
+	font-weight: 400;
+	letter-spacing: 0.1em;
+
+}
+#marker
+{
+	position: absolute;
+	height: 58px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	background: var(--clr);
+	transition: 0.25s;
+	width: 85px;
+}
+#marker::before 
+{
+	content: '';
+	position: absolute;
+	left: -30px;
+	bottom: 0;
+	width: 30px;
+	height: 30px;
+	border-bottom-right-radius: 20px;
+	background: transparent;
+	box-shadow: 5px 5px 0 5px var(--clr);
+}
+#marker::after 
+{
+	content: '';
+	position: absolute;
+	right: -30px;
+	bottom: 0;
+	width: 30px;
+	height: 30px;
+	border-bottom-left-radius: 20px;
+	background: transparent;
+	box-shadow: -5px 5px 0 5px var(--clr);
+}
+
+
+.mo-fire {
+    height: auto;
+    position: fixed;
+    left:20%;
+    bottom: -50px;
+    z-index: 4;
+}
+
+.mo-fire1{
+    height: auto;
+    position: fixed;
+    left:60%;
+    bottom: -50px;
+    z-index: 4;
+    opacity: 0.7;
+}
+.mo-fire2{
+    height: auto;
+    position: fixed;
+    right:60%;
+    bottom: -50px;
+    z-index: 4;
+    opacity: 0.8;
+}
+
+#svg-view {
+    width: 252px;
+    height: 125px;
+    left: 0px;
+}
+
+.mo-fire svg {
+    width: 100%;
+    height: auto;
+    position:relative;
+    right:40px;
+}
+.flame {
+    animation-name: flameDisappear;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 0.5;
+    transform-origin: 45% 45% 0;
+}
+.flame.one {
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+.flame.two{
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+
+.flame-main {
+    animation-name: flameMovement;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.flame-main.one {
+animation-duration: 2.2s;
+animation-delay: 1s;
+}
+.flame-main.two {
+animation-duration: 2s;
+animation-delay: 1s;
+}
+.flame-main.three {
+animation-duration: 2.1s;
+animation-delay: 3s;
+}
+.flame-main.four {
+animation-duration: 3.2s;
+animation-delay: 4s;
+}
+.flame-main.five {
+animation-duration: 2.5s;
+animation-delay: 5s;
+}
+@keyframes flameMovement {
+    50% {
+        transform: scale(0.98, 1.0) translate(0, 2px) rotate(-1deg);
+    }
+}
+@keyframes flameDisappear {
+    0% {
+        transform: translate(0) rotate(180deg);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-10px, -40px) rotate(180deg);
+        opacity: 0;
+    }
+}

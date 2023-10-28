@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+		<a href="#" class="logo">FireWall</a>
+		<nav>
+			<div id="marker"></div>
+			<a href="/Users/mymac/Desktop/UAEC-Wildfire-Assessment/index.html">Home</a>
+            <a href="/Users/mymac/Desktop/UAEC-Wildfire-Assessment/Login.html">Login</a>
+		</nav>
+	</header>
+	<script>
+        var marker = document.querySelector('#marker');
+        var item = document.querySelectorAll('nav a');
+    
+        function indicator(e) {
+            marker.style.left = e.offsetLeft + "px";
+            marker.style.width = e.offsetWidth - 2 + "px";
+        }
+    
+        item.forEach(link => {
+            link.addEventListener('click', (e) => {
+                indicator(e.target);
+            });
+        });
+    
+        // Automatically set the initial marker position on page load
+        var currentPath = window.location.pathname;
+        var activeLink = document.querySelector('nav a[href="' + currentPath + '"]');
+        if (activeLink) {
+            indicator(activeLink);
+        }
+    </script>
+	<section>
+		<div class="waves">
+			<img src="stars.jpg" class="stars">
+			<div class="wave" id="wave1"></div>
+			<div class="wave" id="wave2"></div>
+			<div class="wave" id="wave3"></div>
+			<div class="wave" id="wave4"></div>
+		</div>
+	</section>
+</body>
+</html>

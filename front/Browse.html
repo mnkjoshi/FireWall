@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WildFire</title>
+	<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <header>
+		<a href="#" class="logo">F1R3W4LL</a>
+		<nav>
+			<div id="marker"></div>
+			<a href="/Users/mymac/Desktop/UAEC-Wildfire-Assessment/index.html">Home</a>
+            <a href="/Users/mymac/Desktop/UAEC-Wildfire-Assessment/GetStarted.html">Content</a>
+            <a href="/Users/mymac/Desktop/UAEC-Wildfire-Assessment/Login.html">Login</a>
+		</nav>
+	</header>
+	<script>
+		var marker = document.querySelector('#marker');
+    var item = document.querySelectorAll('nav a');
+    function indicator(e){
+        marker.style.left = e.offsetLeft+"px";
+        marker.style.width = e.offsetWidth-2+"px";
+    }
+    item.forEach(link => {
+     link.addEventListener('click', (e) => {
+      indicator(e.target);
+     });
+    });
+    </script>
+</body>
+</html>
